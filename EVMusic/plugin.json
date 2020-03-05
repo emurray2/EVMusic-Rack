@@ -1,0 +1,25 @@
+{
+  "slug": "EVMusic",
+  "name": "EV Music",
+  "version": "1.1.6",
+  "license": "\tBSD-Source-Code",
+  "brand": "Aura Audio",
+  "author": "Evan Murray",
+  "authorEmail": "",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "ModularForecast",
+      "name": "Modular Forecast",
+      "description": "Visualize weather with synth patches!",
+      "tags": [
+        "Visualizer"
+      ]
+    }
+  ]
+}
