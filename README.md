@@ -1,2 +1,2 @@
 # EVMusic-Rack
-Source code for my first VCV Rack Plugin
+My first VCV Rack Plugin
