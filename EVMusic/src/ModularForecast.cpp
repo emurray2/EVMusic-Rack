@@ -32,40 +32,14 @@ struct ModularForecast : Module {
 struct ModularForecastDisplay : OpenGlWidget {
     ModularForecast *module;
     ModularForecastDisplay(){}
-    
-    //Draw a custom widget in the module - the weather view
-    //args.vg is the NVGContext
-    void draw(const DrawArgs &args) override {
+    void drawFramebuffer() override {
         
-        //background
-        nvgFillColor(args.vg, nvgRGB(20, 30, 33));
-        nvgBeginPath(args.vg);
-        nvgRect(args.vg, 0, 0, box.size.x, box.size.y);
-        nvgFill(args.vg);
-        glEnable(GL_DEPTH_TEST);
-        
-        //Testing OpenGL
-        
-        //Clear information from last draw
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        
-        glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
-        
-        glBegin(GL_QUADS); //Begin quads
-        
-        //Trapezoid (f forces the compiler to treat these nums as floats)
-        glVertex3f(-0.7f, -1.5f, -5.0f);
-        glVertex3f(0.7f, -1.5f, -5.0f);
-        glVertex3f(0.4f, -0.5f, -5.0f);
-        glVertex3f(-0.4f, -0.5f, -5.0f);
-        
-        glEnd(); //Done!
-        
-        drawFramebuffer();
-        
-        
-        if(module == NULL) return;
+               //Draw blue rectangle inside T.V. instead of default rainbow triangle
+               glViewport(0.0, 0.0, fbSize.x, fbSize.y);
+               glClearColor(0.0, 0.0, 0.0, 1.0);
+               glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+               glColor3f(0.0f, 0.0f, 1.0f);
+               glRectf(-0.75f,0.75f, 0.75f, -0.75f);
     }
 };
 
