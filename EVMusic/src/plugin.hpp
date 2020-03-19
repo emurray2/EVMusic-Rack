@@ -1,5 +1,8 @@
 #pragma once
 #include <rack.hpp>
+extern "C" {
+#include "Soundpipe/soundpipe.h"
+}
 
 
 using namespace rack;
